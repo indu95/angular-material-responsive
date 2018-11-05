@@ -1,0 +1,39 @@
+
+<div class="header-center">
+  
+  <h5>Select  wizard from left sidebar Menu to view stepper</h5>
+ 
+</div>
+
+
+  <div class="example-button-row">
+      <button *ngIf="!showMenu" (click)="toggleMenu()" mat-stroked-button><<Hide menu</button>
+    </div>
+
+<div class="row" style="margin: 0%">
+  <div class="col-sm-2" [ngClass]="{'col-sm-10': showMenu}"  *ngIf="!showMenu">
+    <div class="vertical-menu">
+      <a  class="active">Left side Menu</a>
+      <a [routerLink]="['wizard']" class="">Wizard</a>
+      
+      <a [routerLink]="['comp2']">comp2</a>
+      <a >dummy link3</a>
+      <a >dummy link4</a>
+    </div>
+  </div>
+  
+
+  <div class="col-sm-2" *ngIf="showMenu" (click)="toggleMenu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    <div class="col-sm-8" [ngClass]="{'col-sm-12': checkFlag()}">
+        <router-outlet></router-outlet>
+      </div>
+</div>
+   
+
+  
+
