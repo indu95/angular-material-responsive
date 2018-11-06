@@ -14,16 +14,16 @@ export class WizardComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-
+   thirdFormGroup : FormGroup; 
   constructor(private _formBuilder: FormBuilder,
     private menuService :MenuServiceService) { }
 
   ngOnInit() {
-    if ((window.innerWidth) < 600) {
+    if ((window.innerWidth) < 800) {
       this.mobileScreen = true;
       
     }
-    if((window.innerWidth) < 880){
+    if((window.innerWidth) < 1080){
       this.menuService.setMenu(true);
     }
 
@@ -33,12 +33,15 @@ export class WizardComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
   }
   onResize(event) {
-    if ((window.innerWidth) < 600) {
+    if ((window.innerWidth) < 800) {
       this.mobileScreen = true;
     }
-    if((window.innerWidth) < 880){
+    if((window.innerWidth) < 1080){
       this.menuService.setMenu(true);
     }
     else {

@@ -29,6 +29,21 @@
         </div>
       </form>
     </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Mobile Number" formControlName="thirdCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       You are now done.
@@ -58,6 +73,18 @@
       <ng-template matStepLabel>Fill out your address</ng-template>
       <mat-form-field>
         <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" formControlName="thirdCtrl" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
